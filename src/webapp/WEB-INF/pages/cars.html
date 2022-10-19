@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Машины</title>
+    <style>
+        table {
+            width: 100%;
+            border: 4px double black;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+            background: #ccc;
+            padding: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.53);
+        }
+        td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>BRAND</th>
+            <th>MODEL</th>
+            <th>YEAR</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="cars : ${cars}">
+            <tr>
+                <td th:text="${cars.getId()}"/>
+                <td th:text="${cars.getBrand()}"/>
+                <td th:text="${cars.getModel()}"/>
+                <td th:text = "${cars.getYearOfRealese()}"/>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
